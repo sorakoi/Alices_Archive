@@ -20,12 +20,11 @@ int main()
 {
 	makura hime[50];
 	int z,i=0,j=0;
+	cout<<"------------输入指南-------------"<<endl<<"输入1：添加通讯录。输入2：显示所有通讯录。"
+	<<endl<<"输入3：查找通讯录。输入5直接退出。"<<endl;
 	cout<<"首次登录，请先输入通讯录：";
-	hime[i].in(); 
-	cout<<"请输入指令：";
-	for(;;)
-	{cin>>z;
-	switch(z)
+	for(z=1;z!=5;)
+	{switch(z)
 	{case(1):
 		i++;hime[i].in();break;
 	case(2):
@@ -33,7 +32,8 @@ int main()
 		{hime[j].out();} break;
 //	case(3):
 	default:
-       cout << "goodbye" << endl;break;
-	}}
+       cout << "指令错误。请重新输入！！！" << endl;break;
+	}
+	cout<<"请输入指令：";cin>>z;}
 	return 0;
 }
