@@ -10,8 +10,8 @@ private:
 	string tel,qq,name,mails;
 };
 void makura::in()
-{cout<<endl<<"姓名：";cin>>name;cout<<"电话：";cin>>tel;
-cout<<"QQ：";cin>>qq;cout<<"邮箱：";cin>>mails;}
+{cout<<"姓名：";cin>>name;cout<<"电话：";cin>>tel;
+cout<<"QQ：";cin>>qq;cout<<"邮箱：";cin>>mails;cout<<endl;}
 void makura::out()
 {cout<<"姓名："<<name<<"  电话："<<tel<<"  QQ："<<qq<<"  电子邮箱："<<mails<<endl;}
 int makura::find(string a)
@@ -22,8 +22,8 @@ int main()
 	int z,i=0,j=0,t=0;
 	string findname;
 	cout<<"------------输入指南-------------"<<endl<<"输入1：添加通讯录。输入2：显示所有通讯录。"
-	<<endl<<"输入3：查找通讯录。输入5直接退出。"<<endl;
-	cout<<"首次登录，请先输入通讯录：";
+	<<endl<<"输入3：查找通讯录。输入5直接退出。"<<endl<<endl;
+	cout<<"首次登录，请先输入通讯录："<<endl;
 	for(z=1;z!=5;)
 	{switch(z)
 	{case(1):
