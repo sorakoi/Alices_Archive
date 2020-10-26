@@ -8,7 +8,8 @@ int main()
     int rus;
 	srand((unsigned)time(NULL));  //生成随机数 
 	sjs=rand()%1000;
-	cout<<"（测试用）随机数的值："<<sjs<<endl;
+	//cout<<"（测试用）随机数的值："<<sjs<<endl;
+	cout<<"指令1：不限次数猜随机三位数！  指令2：限10次猜数！" <<endl;
 	cout<<"请输入指令！"<<endl; 
 	cin>>i;
 	switch(i)
@@ -24,7 +25,7 @@ int main()
 			for(j=1;;j++)
 		{if(j==11) {cout<<"超过10次错误，你已经失败！";break;}
 		cout<<"请输入数：";cin>>ru;if(ru[0]=='q') break;
-		rus=ru[2]-'0'+10*(ru[1]-'0')+100*(ru[0]-'0');
+		rus=atoi(ru);
 		if(rus==sjs) {cout<<"恭喜猜对！共花费"<<j<<"次";break;}
 		if(rus<sjs) cout<<"输入过小！"<<endl;
 		if(rus>sjs) cout<<"输入过大！"<<endl; } break;
