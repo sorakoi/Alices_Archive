@@ -1,72 +1,32 @@
 #include <iostream>
 using namespace std;
-//递归算法解决八皇后问题。总共有92种解法。        c[r]=i是指c【行】=列；cnt是一共有几个解法
-int c[20], n=8, cnt=0;
-void print(){
-    for(int i=0; i<n; ++i){
-        for(int j=0; j<n; ++j){
-            if(j == c[i]) cout<<"1 ";
-            else cout<<"0 ";
-        }
-        cout<<endl;
-    }
+int c[20],n=8,count=0;
+void write()
+{
+    for(int i=0;i<n;++i)     //i<n 输出行循环 
+	    {for(int j=0;j<n;++j)   //输出列循环 
+		{if(j==c[i]) cout<<"1 ";   //输出对应结果 
+            else cout<<"0 ";}
+        cout<<endl;}
     cout<<endl;
 }
-void search(int r){
-    if(r == n){
-        print();
-        ++cnt;
-        return;
-    }
-    for(int i=0; i<n; ++i){
-        c[r] = i;
-        int ok = 1;
+void find(int r)
+    {if(r==n)
+	   {write();          //当行数到8时输出 
+        ++count; 
+        return;}
+    for(int i=0;i<n;++i)
+	{c[r]=i;
+        int t=1;
         for(int j=0; j<r; ++j)
-            if(c[r]==c[j] || r-j==c[r]-c[j] || r-j==c[j]-c[r]){
-                ok = 0;
-                break;
-            }
-        if(ok) search(r+1);
+            if(c[r]==c[j]||r-j==c[r]-c[j]||r-j==c[j]-c[r])  //检查行列 
+			{t=0;break;}        //用t检测是否出现符合的 
+        if(t==1) find(r+1);  //递归 
     }
 }
-int main(){
-    search(0);
-    cout<<cnt<<endl;
-    return 0;
-}
-      
-      
-#include <iostream>
-using namespace std;
-//递归算法解决八皇后问题。总共有92种解法。
-int c[20], n=8;
-void print(){
-    for(int i=0; i<n; ++i){
-        for(int j=0; j<n; ++j){
-            if(j == c[i]) cout<<"1 ";
-            else cout<<"0 ";
-        }
-        cout<<endl;
-    }
-    cout<<endl;
-}
-void find(int r){
-    if(r == n){
-        print();
-        return;
-    }
-    for(int i=0;i<n;++i){
-        c[r] = i;
-        int t = 1;
-        for(int j=0; j<r; ++j)
-            if(c[r]==c[j] || r-j==c[r]-c[j] || r-j==c[j]-c[r]){   //测试行列是否冲突 
-                t=0;
-                break;
-            }
-        if(t=1) find(r+1);
-    }
-}
-int main(){
+int main()
+{
     find(0);
+    cout<<"总计共"<<count<<"个符合结果！"<<endl;
     return 0;
 }
