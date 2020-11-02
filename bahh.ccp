@@ -34,3 +34,39 @@ int main(){
     cout<<cnt<<endl;
     return 0;
 }
+      
+      
+#include <iostream>
+using namespace std;
+//递归算法解决八皇后问题。总共有92种解法。
+int c[20], n=8;
+void print(){
+    for(int i=0; i<n; ++i){
+        for(int j=0; j<n; ++j){
+            if(j == c[i]) cout<<"1 ";
+            else cout<<"0 ";
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+}
+void find(int r){
+    if(r == n){
+        print();
+        return;
+    }
+    for(int i=0;i<n;++i){
+        c[r] = i;
+        int t = 1;
+        for(int j=0; j<r; ++j)
+            if(c[r]==c[j] || r-j==c[r]-c[j] || r-j==c[j]-c[r]){   //测试行列是否冲突 
+                t=0;
+                break;
+            }
+        if(t=1) find(r+1);
+    }
+}
+int main(){
+    find(0);
+    return 0;
+}
