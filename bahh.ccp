@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int c[20],n=8,count=0;
+int c[20],n,count=0;
 void write()
 {
     for(int i=0;i<n;++i)     //i<n 输出行循环 
@@ -26,6 +26,12 @@ void find(int r)
 }
 int main()
 {
+	char b;
+	cout<<"此程序可自定义棋盘边长，输入y设置，输入n则默认为8。  "<<"输入值应当在6-10之间！"<<endl;
+	cin>>b;
+	if(b=='y')
+	{cout<<"在这里输入边长：";for(;;){cin>>n;if(n>10||n<6) {cout<<"溢出,请重新输入"<<endl;}else break;}}
+	if(b=='n') n=8;
     find(0);
     cout<<"总计共"<<count<<"个符合结果！"<<endl;
     return 0;
