@@ -133,7 +133,7 @@ void write()//将学生信息以文件形式保存
 	outfile.write((char*)&stu[i],sizeof(stu[i]));
 	outfile.close();//保存完毕后关闭磁盘文件 
 }
-void menu()//菜单函数 
+void kotone()//菜单函数 
 {while(1)
  {cout<<endl;
   cout<<"******学生管理信息系统******"<<endl;
@@ -155,6 +155,6 @@ void menu()//菜单函数
 }
 int main()//主函数 
 {
- menu();
+ kotone();
  return 0;
  } 
