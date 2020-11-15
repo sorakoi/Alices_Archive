@@ -55,8 +55,8 @@ void sort()
    default:cout<<"指令错误！"<<endl;
    } 
 }
-void display()//按学号升序排列的显示函数 
-{ sort(stu,stu+n,cmp2);
+void display()
+{ //sort(stu,stu+n,cmp2);//按学号升序排列的显示函数   为配合排序功能的实现，不运行此函数
  for(int i=0;i<n;i++)
  cout<<"学号："<<stu[i].xuehao<<" 姓名："<<stu[i].name<<" 年龄："<<stu[i].age<<" 性别："
  <<stu[i].sex<<" 生日："<<stu[i].born<<" 地址："<<stu[i].address<<" 电话："<<stu[i].phone<<" 电子邮件："<<stu[i].email<<endl;}
@@ -137,8 +137,8 @@ void kotone()//菜单函数
 {while(1)
  {cout<<endl;
   cout<<"******学生管理信息系统******"<<endl;
-  cout<<"1.录入---2.显示全部信息 ---3.查询（排序）-"<<endl;
-  cout<<"4.删除信息--5.修改信息---  6.退出程序-----"<<endl;
+  cout<<"1.录入-2.显示全部信息--3.查询-4.删除信息"<<endl;
+  cout<<"5.修改信息----6.排序----7.退出程序-----"<<endl;
    int number;
    cout<<"请输入你要选择的功能：";
    cin>>number;
@@ -148,7 +148,8 @@ void kotone()//菜单函数
     case 3:search();break;
     case 4:delect();break;
     case 5:modify();break;
-    case 6:exit(1);
+    case 6:sort();break;
+    case 7:exit(1);
     default:cout<<"指令错误！"<<endl; 
    }
    }
