@@ -23,7 +23,7 @@ class primary_stu(Student):
         print("primary")
 
 def onefunction(person):
-    person.print_some()
+    person.print_some()   # 实际上我们并不关心实例是不是Student或者其子类的类型，只要你有print_some函数，就都可以调用本函数。这就是所谓的鸭子类型。
 
 print('以下是关于多态的测试')
 onefunction(Student(0,0,0))  # 主要是测试多态，参数随便写的。这里没有把实例赋给变量，所以是一次性的
