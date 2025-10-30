@@ -1,7 +1,6 @@
 # himari department of sumisora university
 # hoshiori lab. python dep.
 
-
 # __init__ 在创建对象时自动调用 (类似构造函数)
 # self 参数代表对象本身
 class User(object):
